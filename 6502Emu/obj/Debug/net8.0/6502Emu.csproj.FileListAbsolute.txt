@@ -1,0 +1,14 @@
+/home/ikars/RiderProjects/6502Emu/6502Emu/bin/Debug/net8.0/6502Emu
+/home/ikars/RiderProjects/6502Emu/6502Emu/bin/Debug/net8.0/6502Emu.deps.json
+/home/ikars/RiderProjects/6502Emu/6502Emu/bin/Debug/net8.0/6502Emu.runtimeconfig.json
+/home/ikars/RiderProjects/6502Emu/6502Emu/bin/Debug/net8.0/6502Emu.dll
+/home/ikars/RiderProjects/6502Emu/6502Emu/bin/Debug/net8.0/6502Emu.pdb
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/6502Emu.GeneratedMSBuildEditorConfig.editorconfig
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/6502Emu.AssemblyInfoInputs.cache
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/6502Emu.AssemblyInfo.cs
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/6502Emu.csproj.CoreCompileInputs.cache
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/6502Emu.dll
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/refint/6502Emu.dll
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/6502Emu.pdb
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/6502Emu.genruntimeconfig.cache
+/home/ikars/RiderProjects/6502Emu/6502Emu/obj/Debug/net8.0/ref/6502Emu.dll

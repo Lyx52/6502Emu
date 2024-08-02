@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6502Emu", "6502Emu\6502Emu.csproj", "{9585003A-9881-4218-AFE1-6CC9B62ADEB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6502Emu.Tests", "6502Emu.Tests\6502Emu.Tests.csproj", "{2AC1D0FF-5F5D-41E0-B67B-24070173E640}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9585003A-9881-4218-AFE1-6CC9B62ADEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9585003A-9881-4218-AFE1-6CC9B62ADEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9585003A-9881-4218-AFE1-6CC9B62ADEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9585003A-9881-4218-AFE1-6CC9B62ADEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC1D0FF-5F5D-41E0-B67B-24070173E640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC1D0FF-5F5D-41E0-B67B-24070173E640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC1D0FF-5F5D-41E0-B67B-24070173E640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC1D0FF-5F5D-41E0-B67B-24070173E640}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
