@@ -8,10 +8,11 @@ public enum AddressingMode
     Relative,
     ZeroPage,
     ZeroPageX,
+    ZeroPageY,
     Absolute,
     AbsoluteY,
     AbsoluteX,
     Indirect,
-    IndirectX,
-    IndirectY
+    IndexedIndirect,
+    IndirectIndexed
 }

@@ -38,7 +38,7 @@ public class Cpu
         return data;
     }
 
-    public ushort ReadShortFromMemory(AddressingMode mode)
+    public ushort ReadAddrFromMemory(AddressingMode mode)
     {
         switch (mode)
         {
@@ -50,12 +50,14 @@ public class Cpu
             }
             case AddressingMode.AbsoluteX:
             {
-                ushort baseAddr = Bus.Read16(ProgramCounter++);
+                ushort baseAddr = Bus.Read16(ProgramCounter);
+                ProgramCounter += 2;
                 return (ushort)((baseAddr + X) % 0xFFFF);
             }
             case AddressingMode.AbsoluteY:
             {
-                ushort baseAddr = Bus.Read16(ProgramCounter++);
+                ushort baseAddr = Bus.Read16(ProgramCounter);
+                ProgramCounter += 2;
                 return (ushort)((baseAddr + Y) % 0xFFFF);
             }
             case AddressingMode.Indirect:
@@ -63,6 +65,20 @@ public class Cpu
                 var addr = Bus.Read16(ProgramCounter);
                 ProgramCounter += 2;
                 return Bus.Read16(addr);
+            }
+            case AddressingMode.IndexedIndirect:
+            {
+                var baseAddr = Bus.Read8(ProgramCounter++);
+                baseAddr += X;
+                return Bus.Read16(baseAddr);
+            }
+            case AddressingMode.IndirectIndexed:
+            {
+                var targetZpAddr = Bus.Read8(ProgramCounter++);
+                var baseAddr = Bus.Read16(targetZpAddr);
+                
+                baseAddr += Y;
+                return baseAddr;
             }
             case AddressingMode.ZeroPage:
             {
@@ -73,6 +89,11 @@ public class Cpu
             {
                 ushort baseAddr = Bus.Read8(ProgramCounter++);
                 return (ushort)((baseAddr + X) % 0xFF);
+            }
+            case AddressingMode.ZeroPageY:
+            {
+                ushort baseAddr = Bus.Read8(ProgramCounter++);
+                return (ushort)((baseAddr + Y) % 0xFF);
             }
             default:
                 throw new Exception($"Cant read short from memory using {mode}");
@@ -97,6 +118,20 @@ public class Cpu
                 ProgramCounter += 2;
                 return Bus.Read8(addr);
             }
+            case AddressingMode.AbsoluteX:
+            {
+                ushort baseAddr = Bus.Read16(ProgramCounter);
+                var addr = (ushort)((baseAddr + X) % 0xFFFF);
+                ProgramCounter += 2;
+                return Bus.Read8(addr);
+            }
+            case AddressingMode.AbsoluteY:
+            {
+                ushort baseAddr = Bus.Read16(ProgramCounter);
+                var addr = (ushort)((baseAddr + Y) % 0xFFFF);
+                ProgramCounter += 2;
+                return Bus.Read8(addr);
+            }
             case AddressingMode.ZeroPage:
             {
                 var addr = Bus.Read8(ProgramCounter++);
@@ -107,6 +142,11 @@ public class Cpu
                 ushort baseAddr = Bus.Read8(ProgramCounter++);
                 return Bus.Read8((ushort)((baseAddr + X) % 0xFF));
             }
+            case AddressingMode.ZeroPageY:
+            {
+                ushort baseAddr = Bus.Read8(ProgramCounter++);
+                return Bus.Read8((ushort)((baseAddr + Y) % 0xFF));
+            }
             case AddressingMode.Indirect:
             {
                 var addr = Bus.Read16(ProgramCounter);
@@ -115,7 +155,21 @@ public class Cpu
 
                 return Bus.Read8(derefAddr);
             }
-            
+            case AddressingMode.IndexedIndirect:
+            {
+                var baseAddr = Bus.Read8(ProgramCounter++);
+                baseAddr = (byte)((baseAddr + X) % 0xFF);
+                var targetAddr = Bus.Read16(baseAddr);
+                return Bus.Read8(targetAddr);
+            }
+            case AddressingMode.IndirectIndexed:
+            {
+                var targetZpAddr = Bus.Read8(ProgramCounter++);
+                var baseAddr = Bus.Read16(targetZpAddr);
+                
+                baseAddr += Y;
+                return Bus.Read8(baseAddr);
+            }
             default:
                 throw new Exception($"Cant read byte from memory using {mode}");
         }
